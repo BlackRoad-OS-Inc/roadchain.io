@@ -1,0 +1,25 @@
+{
+  "name": "roadchain.io",
+  "org": "BlackRoad-OS-Inc",
+  "category": "blockchain",
+  "title": "RoadChain",
+  "deploy": {
+    "target": "gematria",
+    "path": "/var/www/blackroad/roadchain.io",
+    "ssl": "auto",
+    "cdn": true
+  },
+  "mirrors": {
+    "gitea": "https://git.blackroad.io/BlackRoad-OS-Inc/roadchain.io",
+    "github": "https://github.com/BlackRoad-OS-Inc/roadchain.io"
+  },
+  "ci": {
+    "on_push": ["build", "deploy"],
+    "on_pr": ["lint", "audit"]
+  },
+  "monitoring": {
+    "uptime": true,
+    "analytics": "roadanalytics",
+    "alerts": "nats"
+  }
+}
